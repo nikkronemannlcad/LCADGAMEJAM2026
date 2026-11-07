@@ -5,9 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Den.unity
+    guid: d5f912f657fe6d642b822cfeeb4efc8a
+  - enabled: 1
+    path: Assets/Scenes/Burgeoning.unity
+    guid: 7867010231173eb49ab49b90a6613304
+  - enabled: 1
+    path: Assets/Scenes/Anger.unity
+    guid: 58fb20a1fdcb4db48a4b4f270f727d14
+  - enabled: 1
+    path: Assets/Scenes/Denial.unity
+    guid: 23bec672064e14d4aa2e90c9cb66ee48
+  - enabled: 1
+    path: Assets/Scenes/Depression.unity
+    guid: 8fe071138b1c85e438e71a66dfaeeb34
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
