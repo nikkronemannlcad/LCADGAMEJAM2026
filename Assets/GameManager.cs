@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool Depression = false;
     [SerializeField] private bool Acceptance = false;
 
-    [SerializeField] private bool acquiredShiny = false;
+    public bool acquiredShiny = false;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     }
     public void setDenial(bool value)
     {
-        Denial = false;
+        Denial = value;
     }
     public bool getAnger()
     {
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     }
     public void setAnger(bool value)
     {
-        Anger = false;
+        Anger = value;
     }
     public bool getBargening()
     {
@@ -67,25 +67,22 @@ public class GameManager : MonoBehaviour
     {
         Acceptance = value;
     }
-    
-    public bool setAcquiredShiny(bool value)
+    public bool getAcquiredShiny()
     {
-        return value;
+        return acquiredShiny;
     }
-
-    public void setAcquiredShiny()
+    public void setAcquiredShiny(bool value)
     {
-
+        acquiredShiny = value;
     }
-
     public int getVolume()
     {
         return Volume;
     }
 
-    public int setVolume(int volume)
+    public void setVolume(int volume)
     {
-        return volume;
+        Volume = volume;
         Debug.Log("Volume set to " + Volume);
     }
 }
