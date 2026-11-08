@@ -27,6 +27,7 @@ public class BoarScript : MonoBehaviour
         if (isAngry && !chargeOngoing)
         {
             StartCoroutine(ChargeRoutine());
+            gameManager.setAnger(true);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -43,12 +44,6 @@ public class BoarScript : MonoBehaviour
                 Debug.Log("Player Died");
                 SceneManager.LoadScene("Anger");
             }
-        }
-        if (other.CompareTag("Portal"))
-        {
-            Debug.Log("Player won level");
-            gameManager.setAnger(true);
-            Destroy(gameObject);
         }
     }
 
