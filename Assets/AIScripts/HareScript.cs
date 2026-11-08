@@ -28,6 +28,11 @@ public class DenialPatrol : MonoBehaviour
             Debug.Log("The Hare will move onto the afterlife");
             gameManager.setDenial(true);
         }
+        if (other.CompareTag("Portal"))
+        {
+
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator FollowPathRoutine()
