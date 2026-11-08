@@ -1146,6 +1146,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NestModel
       objectReference: {fileID: 0}
+    - target: {fileID: 3765108852280629433, guid: eb33b8690ff847342b83e52349a2d046, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ec94100b642cc0843bd68112d776f977, type: 2}
+    - target: {fileID: 7349023922482951827, guid: eb33b8690ff847342b83e52349a2d046, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ccae7484029efc4b9d3232657072c72, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
