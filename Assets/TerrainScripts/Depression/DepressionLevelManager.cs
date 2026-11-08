@@ -16,6 +16,10 @@ public class DepressionLevelManager : MonoBehaviour
     public void Start()
     {
         gameManager = Object.FindFirstObjectByType<GameManager>();
+        returnPortal.SetActive(false);
+        returnPortalHitBox.SetActive(false);
+        bearTextBox.SetActive(false);
+        bearText.SetActive(false);
     }
 
     public void Update()
@@ -29,7 +33,6 @@ public class DepressionLevelManager : MonoBehaviour
 
             returnPortal.SetActive(true);
             returnPortalHitBox.SetActive(true);
-
         }
     }
 }
