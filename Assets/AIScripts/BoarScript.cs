@@ -2,81 +2,88 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class BoarScript : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float locationDelay = 0.5f;
     [SerializeField] private Transform player;
-    private Transform playerTransform;
+    [SerializeField] private float chargeDuration = 3.5f;
+    [SerializeField] private float idleTime = 1.5f;
+    [SerializeField] private Animator animator;
     private GameManager gameManager;
     private int playerhitcount;
-    private Queue<Vector3> playerHistory = new Queue<Vector3>();
+    private bool isAngry = false;
+    private bool chargeOngoing;
 
     void Start()
     {
         gameManager = Object.FindFirstObjectByType<GameManager>();
-        if (player != null)
+    }
+
+    public void Update()
+    {
+        if (isAngry && !chargeOngoing)
         {
-            playerTransform = player;
+            StartCoroutine(ChargeRoutine());
         }
-        StartCoroutine(RecordPlayerPath());
-        StartCoroutine(FollowPlayerPath());
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && isAngry)
         {
-            if (playerhitcount == 0)
+            if (playerhitcount == 0 && isAngry)
             {
-                Debug.Log("Player got hit one more and player dies");
+                Debug.Log("If you get hit another time you die");
                 playerhitcount++;
             }
-            else if (playerhitcount == 1)
+            else if (playerhitcount == 1 && isAngry)
             {
-                Debug.Log("Player Died to the Boar");
+                Debug.Log("Player Died");
                 SceneManager.LoadScene("Anger");
             }
         }
         if (other.CompareTag("Portal"))
         {
-            Debug.Log("Player beat the boar and won the level, return to den");
+            Debug.Log("Player won level");
             gameManager.setAnger(true);
             Destroy(gameObject);
         }
     }
-    IEnumerator RecordPlayerPath()
-    {
-        while (true)
-        {
-            if (playerTransform != null)
-            {
-                playerHistory.Enqueue(playerTransform.position);
-            }
-            yield return null;
-        }
-    }
-    IEnumerator FollowPlayerPath() { 
-        yield return new WaitForSeconds(locationDelay);
+    //update hit detection? Maybe a pushback so players dont instantly die
 
+    IEnumerator ChargeRoutine()
+    {
+        yield return new WaitForSeconds(0.5f);
         while (true)
         {
-            if (playerHistory.Count > 0)
+            chargeOngoing = true;
+            Vector3 targetPosition = player.position;
+            targetPosition.y = transform.position.y;
+            transform.LookAt(targetPosition);
+            animator.SetFloat("Speed", 0.5f);
+            float timerForCharge = 0f;
+
+            while (Vector3.Distance(transform.position, targetPosition) > 0.2f && timerForCharge < chargeDuration)
             {
-                Vector3 targetPosition = playerHistory.Dequeue();
-                while (Vector3.Distance(transform.position, targetPosition) > 0.05f)
-                {
-                    targetPosition.y = 1;
-                    transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-                    yield return null;
-                }
-                transform.position = targetPosition;
-            }
-            else
-            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                timerForCharge += Time.deltaTime;
                 yield return null;
             }
+
+            if (Vector3.Distance(transform.position, targetPosition) <= 0.1f)
+            {
+                transform.position = targetPosition;
+            }
+            animator.SetFloat("Speed", 0f);
+
+            yield return new WaitForSeconds(idleTime);
         }
+    }
+
+    public void setAngry(bool value)
+    {
+        isAngry = value;
     }
 }
