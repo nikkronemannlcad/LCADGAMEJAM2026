@@ -352,9 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   Volume: 100
-  Denial: 0
-  Anger: 0
-  Bargening: 0
+  Denial: 1
+  Anger: 1
+  Bargening: 1
   Depression: 0
   Acceptance: 0
   acquiredShiny: 0

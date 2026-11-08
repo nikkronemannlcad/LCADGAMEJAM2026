@@ -6,11 +6,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 10f;
 
+    private float currentTime = 0f;
+    private bool isGoingOn = false;
     private float moveX;
     private float moveZ;
 
     void Start()
     {
+        currentTime = 3f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         if (rb == null) rb = GetComponent<Rigidbody>();
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
         if (inputDirection == Vector3.zero)
         {
             animator.SetFloat("Speed", 0f);
+            animator.SetBool("isPushing", false);
         }
         else
         {
@@ -36,6 +40,16 @@ public class PlayerController : MonoBehaviour
         {
             Application.Quit();
             Debug.Log("Player Quit Game");
+        }
+        if (isGoingOn)
+        {
+            currentTime -= Time.deltaTime;
+        }
+        if (currentTime <= 0)
+        {
+            animator.SetBool("isPushing", false);
+            isGoingOn = false;
+            currentTime = 0;
         }
     }
 
@@ -51,17 +65,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Bear"))
         {
+            isGoingOn = true;
             animator.SetBool("isPushing", true);
             Debug.Log("Bear pushing test");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Bear"))
-        {
-            animator.SetBool("isPushing", false);
-            Debug.Log("Player left Bear push Test Area");
         }
     }
 }
