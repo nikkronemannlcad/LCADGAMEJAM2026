@@ -2,28 +2,44 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] public CharacterController characterController;
+    [SerializeField] private Rigidbody rb;
     [SerializeField] private Animator animator;
     [SerializeField] private float speed = 10f;
 
-    private Vector3 velocity;
+    private float moveX;
+    private float moveZ;
 
-    private void FixedUpdate()
+    void Start()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveZ = Input.GetAxisRaw("Vertical");
-        Vector3 moveDirection = (transform.forward * moveZ + transform.right * moveX).normalized;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        if (rb == null) rb = GetComponent<Rigidbody>();
 
-        if (moveDirection == Vector3.zero)
+        rb.freezeRotation = true;
+    }
+
+    private void Update()
+    {
+        moveX = Input.GetAxisRaw("Horizontal");
+        moveZ = Input.GetAxisRaw("Vertical");
+
+        Vector3 inputDirection = new Vector3(moveX, 0f, moveZ);
+        if (inputDirection == Vector3.zero)
         {
             animator.SetFloat("Speed", 0f);
-        } else if (Input.GetKey(KeyCode.W))
+        }
+        else
         {
             animator.SetFloat("Speed", 0.5f);
         }
+    }
 
-            characterController.Move(moveDirection * speed * Time.fixedDeltaTime);
-        characterController.Move(velocity * Time.fixedDeltaTime);
+    private void FixedUpdate()
+    {
+        Vector3 moveDirection = (transform.forward * moveZ + transform.right * moveX).normalized;
+        Vector3 targetVelocity = moveDirection * speed;
+
+        rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,9 +50,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Bear pushing test");
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        animator.SetBool("isPushing", false);
-        Debug.Log("Player left Bear push Test Area");
+        if (other.CompareTag("Bear"))
+        {
+            animator.SetBool("isPushing", false);
+            Debug.Log("Player left Bear push Test Area");
+        }
     }
 }

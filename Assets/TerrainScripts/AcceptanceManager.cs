@@ -7,6 +7,12 @@ public class AcceptanceManager : MonoBehaviour
     [SerializeField] private GameObject BurgeoningPortal;
     [SerializeField] private GameObject DepressionPortal;
     [SerializeField] private GameObject AcceptancePortal;
+    [SerializeField] private GameObject DenialPortalVFX;
+    [SerializeField] private GameObject AngerPortalVFX;
+    [SerializeField] private GameObject BurgeoningPortalVFX;
+    [SerializeField] private GameObject DepressionPortalVFX;
+    [SerializeField] private GameObject AcceptancePortalVFX1;
+    [SerializeField] private GameObject AcceptancePortalVFX2;
     private GameManager gameManager;
     public void Start()
     {
@@ -20,6 +26,13 @@ public class AcceptanceManager : MonoBehaviour
             BurgeoningPortal.SetActive(false);
             DepressionPortal.SetActive(false);
             AcceptancePortal.SetActive(false);
+
+            DenialPortalVFX.SetActive(true);
+            AngerPortalVFX.SetActive(false);
+            BurgeoningPortalVFX.SetActive(false);
+            DepressionPortalVFX.SetActive(false);
+            AcceptancePortalVFX1.SetActive(false);
+            AcceptancePortalVFX2.SetActive(false);
         }
         //Level 2 Unlock
         if (gameManager.getDenial() == true && gameManager.getAnger() == false)
@@ -29,6 +42,13 @@ public class AcceptanceManager : MonoBehaviour
             BurgeoningPortal.SetActive(false);
             DepressionPortal.SetActive(false);
             AcceptancePortal.SetActive(false);
+
+            DenialPortalVFX.SetActive(false);
+            AngerPortalVFX.SetActive(true);
+            BurgeoningPortalVFX.SetActive(false);
+            DepressionPortalVFX.SetActive(false);
+            AcceptancePortalVFX1.SetActive(false);
+            AcceptancePortalVFX2.SetActive(false);
         }
         //Level 3 Unlock
         if (gameManager.getAnger() == true && gameManager.getBargening() == false)
@@ -38,6 +58,13 @@ public class AcceptanceManager : MonoBehaviour
             BurgeoningPortal.SetActive(true);
             DepressionPortal.SetActive(false);
             AcceptancePortal.SetActive(false);
+
+            DenialPortalVFX.SetActive(false);
+            AngerPortalVFX.SetActive(false);
+            BurgeoningPortalVFX.SetActive(true);
+            DepressionPortalVFX.SetActive(false);
+            AcceptancePortalVFX1.SetActive(false);
+            AcceptancePortalVFX2.SetActive(false);
         }
         //Level 4 Unlock
         if (gameManager.getBargening() == true && gameManager.getDepression() == false)
@@ -47,6 +74,13 @@ public class AcceptanceManager : MonoBehaviour
             BurgeoningPortal.SetActive(false);
             DepressionPortal.SetActive(true);
             AcceptancePortal.SetActive(false);
+
+            DenialPortalVFX.SetActive(false);
+            AngerPortalVFX.SetActive(false);
+            BurgeoningPortalVFX.SetActive(false);
+            DepressionPortalVFX.SetActive(true);
+            AcceptancePortalVFX1.SetActive(false);
+            AcceptancePortalVFX2.SetActive(false);
         }
         //End of Game
         if (gameManager.getBargening() == true && gameManager.getDepression() == true && gameManager.getAnger() == true && gameManager.getDenial() == true)
@@ -57,7 +91,14 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortal.SetActive(false);
             gameManager.setAcceptance(true);
             AcceptancePortal.SetActive(true);
-            
+
+            DenialPortalVFX.SetActive(false);
+            AngerPortalVFX.SetActive(false);
+            BurgeoningPortalVFX.SetActive(false);
+            DepressionPortalVFX.SetActive(false);
+            AcceptancePortalVFX1.SetActive(true);
+            AcceptancePortalVFX2.SetActive(true);
+
         }
     }
 
