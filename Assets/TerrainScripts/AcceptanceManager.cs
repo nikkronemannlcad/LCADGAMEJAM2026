@@ -7,6 +7,14 @@ public class AcceptanceManager : MonoBehaviour
     [SerializeField] private GameObject BurgeoningPortal;
     [SerializeField] private GameObject DepressionPortal;
     [SerializeField] private GameObject AcceptancePortal;
+
+    [SerializeField] private GameObject DenialPortalHitbox;
+    [SerializeField] private GameObject AngerPortalHitbox;
+    [SerializeField] private GameObject BurgeoningPortalHitbox;
+    [SerializeField] private GameObject DepressionPortalHitbox;
+    [SerializeField] private GameObject AcceptancePortalHitbox;
+
+
     [SerializeField] private GameObject DenialPortalVFX;
     [SerializeField] private GameObject AngerPortalVFX;
     [SerializeField] private GameObject BurgeoningPortalVFX;
@@ -28,6 +36,12 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortal.SetActive(false);
             AcceptancePortal.SetActive(false);
 
+            DenialPortalHitbox.SetActive(true);
+            AngerPortalHitbox.SetActive(false);
+            BurgeoningPortalHitbox.SetActive(false);
+            DepressionPortalHitbox.SetActive(false);
+            AcceptancePortalHitbox.SetActive(false);
+
             DenialPortalVFX.SetActive(true);
             AngerPortalVFX.SetActive(false);
             BurgeoningPortalVFX.SetActive(false);
@@ -46,6 +60,12 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortal.SetActive(false);
             AcceptancePortal.SetActive(false);
 
+            DenialPortalHitbox.SetActive(false);
+            AngerPortalHitbox.SetActive(true);
+            BurgeoningPortalHitbox.SetActive(false);
+            DepressionPortalHitbox.SetActive(false);
+            AcceptancePortalHitbox.SetActive(false);
+
             DenialPortalVFX.SetActive(false);
             AngerPortalVFX.SetActive(true);
             BurgeoningPortalVFX.SetActive(false);
@@ -62,6 +82,12 @@ public class AcceptanceManager : MonoBehaviour
             BurgeoningPortal.SetActive(true);
             DepressionPortal.SetActive(false);
             AcceptancePortal.SetActive(false);
+
+            DenialPortalHitbox.SetActive(false);
+            AngerPortalHitbox.SetActive(false);
+            BurgeoningPortalHitbox.SetActive(true);
+            DepressionPortalHitbox.SetActive(false);
+            AcceptancePortalHitbox.SetActive(false);
 
             DenialPortalVFX.SetActive(false);
             AngerPortalVFX.SetActive(false);
@@ -80,6 +106,12 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortal.SetActive(true);
             AcceptancePortal.SetActive(false);
 
+            DenialPortalHitbox.SetActive(true);
+            AngerPortalHitbox.SetActive(true);
+            BurgeoningPortalHitbox.SetActive(false);
+            DepressionPortalHitbox.SetActive(true);
+            AcceptancePortalHitbox.SetActive(false);
+
             DenialPortalVFX.SetActive(false);
             AngerPortalVFX.SetActive(false);
             BurgeoningPortalVFX.SetActive(false);
@@ -97,6 +129,12 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortal.SetActive(false);
             gameManager.setAcceptance(true);
             AcceptancePortal.SetActive(true);
+
+            DenialPortalHitbox.SetActive(false);
+            AngerPortalHitbox.SetActive(false);
+            BurgeoningPortalHitbox.SetActive(false);
+            DepressionPortalHitbox.SetActive(false);
+            AcceptancePortalHitbox.SetActive(true);
 
             DenialPortalVFX.SetActive(false);
             AngerPortalVFX.SetActive(false);

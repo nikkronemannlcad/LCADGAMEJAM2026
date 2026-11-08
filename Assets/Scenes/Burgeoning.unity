@@ -1920,8 +1920,8 @@ MonoBehaviour:
   crowTextBox: {fileID: 925787795}
   crowText: {fileID: 79193139}
   coinPickupSound: {fileID: 1429427826}
-  returnPortal: {fileID: 0}
-  returnPortalVFX: {fileID: 0}
+  returnPortal: {fileID: 1409700163}
+  returnPortalVFX: {fileID: 857412183}
   timerActive: 0
 --- !u!4 &802470554 stripped
 Transform:

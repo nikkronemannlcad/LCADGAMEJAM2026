@@ -75,8 +75,8 @@ public class CrowCollissionTest : MonoBehaviour
         gameManager.setBargening(yes);
         gameManager.setAcquiredShiny(false);
         coinPickupSound.SetActive(true);
-        returnPortal.SetActive(false);
-        returnPortalVFX.SetActive(false);
+        returnPortal.SetActive(true);
+        returnPortalVFX.SetActive(true);
         Debug.Log("Player has given the crow the shiny object");
         Destroy(gameObject);
 

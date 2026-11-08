@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b392c26b3eacae4498cd347d6ea91bf8
+guid: 981269f0e425eb5459041370a0c3dc74
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2016169185133873911
-    second: Game Jam - Cursor_0
+      213: -852472375080279549
+    second: Game Jam - Exit 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game Jam - Cursor_0
+      name: Game Jam - Exit 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2400
-        height: 1200
+        width: 729
+        height: 267
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 905b109eec02504e0800000000000000
-      internalID: -2016169185133873911
+      spriteID: 302a18634e86b24f0800000000000000
+      internalID: -852472375080279549
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Game Jam - Cursor_0: -2016169185133873911
+      Game Jam - Exit 2_0: -852472375080279549
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

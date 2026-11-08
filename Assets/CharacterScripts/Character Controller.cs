@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat("Speed", 0.5f);
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Application.Quit();
+            Debug.Log("Player Quit Game");
+        }
     }
 
     private void FixedUpdate()
