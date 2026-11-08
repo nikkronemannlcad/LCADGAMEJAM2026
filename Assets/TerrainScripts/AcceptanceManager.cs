@@ -13,6 +13,7 @@ public class AcceptanceManager : MonoBehaviour
     [SerializeField] private GameObject DepressionPortalVFX;
     [SerializeField] private GameObject AcceptancePortalVFX1;
     [SerializeField] private GameObject AcceptancePortalVFX2;
+    [SerializeField] private GameObject owlFamily;
     private GameManager gameManager;
     public void Start()
     {
@@ -33,6 +34,8 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortalVFX.SetActive(false);
             AcceptancePortalVFX1.SetActive(false);
             AcceptancePortalVFX2.SetActive(false);
+
+            owlFamily.SetActive(false);
         }
         //Level 2 Unlock
         if (gameManager.getDenial() == true && gameManager.getAnger() == false)
@@ -49,6 +52,7 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortalVFX.SetActive(false);
             AcceptancePortalVFX1.SetActive(false);
             AcceptancePortalVFX2.SetActive(false);
+            owlFamily.SetActive(false);
         }
         //Level 3 Unlock
         if (gameManager.getAnger() == true && gameManager.getBargening() == false)
@@ -65,6 +69,7 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortalVFX.SetActive(false);
             AcceptancePortalVFX1.SetActive(false);
             AcceptancePortalVFX2.SetActive(false);
+            owlFamily.SetActive(false);
         }
         //Level 4 Unlock
         if (gameManager.getBargening() == true && gameManager.getDepression() == false)
@@ -81,6 +86,7 @@ public class AcceptanceManager : MonoBehaviour
             DepressionPortalVFX.SetActive(true);
             AcceptancePortalVFX1.SetActive(false);
             AcceptancePortalVFX2.SetActive(false);
+            owlFamily.SetActive(false);
         }
         //End of Game
         if (gameManager.getBargening() == true && gameManager.getDepression() == true && gameManager.getAnger() == true && gameManager.getDenial() == true)
@@ -99,12 +105,8 @@ public class AcceptanceManager : MonoBehaviour
             AcceptancePortalVFX1.SetActive(true);
             AcceptancePortalVFX2.SetActive(true);
 
-        }
-    }
+            owlFamily.SetActive(true);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

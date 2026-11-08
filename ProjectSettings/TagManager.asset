@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bear
   - Portal
+  - TextBox
   layers:
   - Default
   - TransparentFX

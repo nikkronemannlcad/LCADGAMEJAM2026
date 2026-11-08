@@ -12,6 +12,8 @@ public class CrowCollissionTest : MonoBehaviour
     public bool timerActive = false;
     public void Start()
     {
+        crowText.SetActive(false);
+        crowTextBox.SetActive(false);
         gameManager = Object.FindFirstObjectByType<GameManager>();
     }
 
@@ -45,8 +47,8 @@ public class CrowCollissionTest : MonoBehaviour
         }
         if (timerActive && gameManager.getAcquiredShiny() == true)
         {
-            //crowText.SetActive(true);
-            //crowTextBox.SetActive(true);
+            crowText.SetActive(true);
+            crowTextBox.SetActive(true);
             if (timeRemaining > 0)
             {
 
@@ -56,8 +58,8 @@ public class CrowCollissionTest : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerActive = false;
-                //crowText.SetActive(false);
-                //crowTextBox.SetActive(false);
+                crowText.SetActive(false);
+                crowTextBox.SetActive(false);
             }
         }
        }
