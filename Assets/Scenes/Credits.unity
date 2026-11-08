@@ -418,14 +418,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Temporary Credits
-
-    Annika - 3D Characters
+  m_text: 'Annika - 3D Characters
 
     Tate - 3D Terrain Models
 
-    Nik
-    - Programming
+    Nik - Programming
+    & Scripting
 
     Kiki - Concepting and UI'
   m_isRightToLeft: 0

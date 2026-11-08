@@ -3,6 +3,7 @@ using UnityEngine;
 public class ShinyTest : MonoBehaviour
 {
     private GameManager gameManager;
+    [SerializeField] private GameObject coinPickupSound;
 
     public void Start()
     {
@@ -13,8 +14,10 @@ public class ShinyTest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             gameManager.setAcquiredShiny(true);
+            coinPickupSound.SetActive(true);
             Destroy(gameObject);
             Debug.Log("Acquired Shiny Object for Crow");
+
         }
     }
 }

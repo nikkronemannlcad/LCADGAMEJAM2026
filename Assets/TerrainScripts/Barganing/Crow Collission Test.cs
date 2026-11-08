@@ -9,9 +9,15 @@ public class CrowCollissionTest : MonoBehaviour
     public float timeRemaining = 10f;
     [SerializeField] private GameObject crowTextBox;
     [SerializeField] private GameObject crowText;
+    [SerializeField] private GameObject coinPickupSound;
+
+    [SerializeField] private GameObject returnPortal;
+    [SerializeField] private GameObject returnPortalVFX;
     public bool timerActive = false;
     public void Start()
     {
+        returnPortal.SetActive(false);
+        returnPortalVFX.SetActive(false);
         crowText.SetActive(false);
         crowTextBox.SetActive(false);
         gameManager = Object.FindFirstObjectByType<GameManager>();
@@ -68,6 +74,9 @@ public class CrowCollissionTest : MonoBehaviour
     {
         gameManager.setBargening(yes);
         gameManager.setAcquiredShiny(false);
+        coinPickupSound.SetActive(true);
+        returnPortal.SetActive(false);
+        returnPortalVFX.SetActive(false);
         Debug.Log("Player has given the crow the shiny object");
         Destroy(gameObject);
 
