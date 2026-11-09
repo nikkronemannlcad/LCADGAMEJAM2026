@@ -6705,31 +6705,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.4
+      value: 14.68
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.74
+      value: 13.81
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 150.24
+      value: 148.46
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9990483
+      value: 0.97907865
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.043619405
+      value: 0.20348209
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6737,7 +6737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 5
+      value: 23.481
       objectReference: {fileID: 0}
     - target: {fileID: 2464938690411418402, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6746,6 +6746,23 @@ PrefabInstance:
     - target: {fileID: 4040579895706686382, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
       propertyPath: m_Name
       value: Text Boxes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054083654831837994, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
+      propertyPath: m_text
+      value: I'm already dead, so what's the point? Someone would hav e to push me
+        into the next life...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054083654831837994, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
+      propertyPath: m_margin.x
+      value: -12.462085
+      objectReference: {fileID: 0}
+    - target: {fileID: 4054083654831837994, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
+      propertyPath: m_margin.z
+      value: -11.084583
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492551292178468486, guid: 882fe232d241f9b41b3ee7e4670c4798, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
