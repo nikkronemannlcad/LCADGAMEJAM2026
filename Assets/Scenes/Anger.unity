@@ -5049,6 +5049,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1637660394412636754, guid: a1ccf0701cd959c42bae998dac81f146, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637660394412636754, guid: a1ccf0701cd959c42bae998dac81f146, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -337
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888078651744158803, guid: a1ccf0701cd959c42bae998dac81f146, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888078651744158803, guid: a1ccf0701cd959c42bae998dac81f146, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 289
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849626559674773186, guid: a1ccf0701cd959c42bae998dac81f146, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -606
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849626559674773186, guid: a1ccf0701cd959c42bae998dac81f146, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -323
+      objectReference: {fileID: 0}
     - target: {fileID: 5954896319798434576, guid: a1ccf0701cd959c42bae998dac81f146, type: 3}
       propertyPath: m_Name
       value: UI UX
@@ -7637,10 +7661,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f75d6c54aeccc4dbf6c5f9a3263e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoarScript
-  speed: 10
+  speed: 15
   player: {fileID: 396687659502523508}
-  chargeDuration: 4.5
-  idleTime: 1
+  chargeDuration: 6.5
+  idleTime: 0.5
   animator: {fileID: 682322113}
 --- !u!54 &2071298992
 Rigidbody:
@@ -8295,6 +8319,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1367357322388933455, guid: f63c224edc946b445a3d6546b27bf0bb, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1612573805583006068, guid: f63c224edc946b445a3d6546b27bf0bb, type: 3}
       propertyPath: m_TagString
       value: Player

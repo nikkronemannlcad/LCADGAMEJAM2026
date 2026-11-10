@@ -15,7 +15,7 @@ public class DepressionLevelManager : MonoBehaviour
     {
         gameManager = Object.FindFirstObjectByType<GameManager>();
         returnPortal.SetActive(true);
-        returnPortalHitBox.SetActive(false);
+        returnPortalHitBox.SetActive(true);
         bearTextBox.SetActive(true);
         bearText.SetActive(true);
     }

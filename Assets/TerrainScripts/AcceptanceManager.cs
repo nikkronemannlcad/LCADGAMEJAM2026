@@ -22,6 +22,8 @@ public class AcceptanceManager : MonoBehaviour
     [SerializeField] private GameObject AcceptancePortalVFX1;
     [SerializeField] private GameObject AcceptancePortalVFX2;
     [SerializeField] private GameObject owlFamily;
+
+    [SerializeField] private GameObject owlFamilyText;
     private GameManager gameManager;
     public void Start()
     {
@@ -50,6 +52,7 @@ public class AcceptanceManager : MonoBehaviour
             AcceptancePortalVFX2.SetActive(false);
 
             owlFamily.SetActive(false);
+            owlFamilyText.SetActive(true);
         }
         //Level 2 Unlock
         if (gameManager.getDenial() == true && gameManager.getAnger() == false)
@@ -73,6 +76,7 @@ public class AcceptanceManager : MonoBehaviour
             AcceptancePortalVFX1.SetActive(false);
             AcceptancePortalVFX2.SetActive(false);
             owlFamily.SetActive(false);
+            owlFamilyText.SetActive(false);
         }
         //Level 3 Unlock
         if (gameManager.getAnger() == true && gameManager.getBargening() == false)
@@ -96,6 +100,7 @@ public class AcceptanceManager : MonoBehaviour
             AcceptancePortalVFX1.SetActive(false);
             AcceptancePortalVFX2.SetActive(false);
             owlFamily.SetActive(false);
+            owlFamilyText.SetActive(false);
         }
         //Level 4 Unlock
         if (gameManager.getBargening() == true && gameManager.getDepression() == false)
@@ -119,6 +124,7 @@ public class AcceptanceManager : MonoBehaviour
             AcceptancePortalVFX1.SetActive(false);
             AcceptancePortalVFX2.SetActive(false);
             owlFamily.SetActive(false);
+            owlFamilyText.SetActive(false);
         }
         //End of Game
         if (gameManager.getBargening() == true && gameManager.getDepression() == true && gameManager.getAnger() == true && gameManager.getDenial() == true)
@@ -144,6 +150,7 @@ public class AcceptanceManager : MonoBehaviour
             AcceptancePortalVFX2.SetActive(true);
 
             owlFamily.SetActive(true);
+            owlFamilyText.SetActive(false);
 
         }
     }
